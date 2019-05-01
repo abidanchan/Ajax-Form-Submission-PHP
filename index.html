@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ajax Form Submission</title>
+</head>
+
+<script type="text/javascript">
+	var username=$('#user_name').val();
+	function data(){
+$.ajax({
+	type:'post',
+	url: 'submitdata.php',
+	data:{
+		name:username
+
+	},
+	success: function(response)
+	{
+		alert('Submitted successfully.');
+	}
+});
+}
+</script>
+<body>
+
+<!-- Form -->
+	<form method="POST" onsubmit="return data();">
+		<input type="text" name="name" id="user_name">
+		<input type="number" name="age" id="user_age">		
+	</form>
+</body>
+</html>
