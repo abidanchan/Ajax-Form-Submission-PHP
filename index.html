@@ -3,10 +3,11 @@
 <head>
 	<title>Ajax Form Submission</title>
 </head>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
-	var username=$('#user_name').val();
+	
 	function data(){
+		var username=$('#user_name').val();
 $.ajax({
 	type:'post',
 	url: 'submitdata.php',
@@ -19,14 +20,18 @@ $.ajax({
 		alert('Submitted successfully.');
 	}
 });
+ return false;
 }
 </script>
 <body>
 
 <!-- Form -->
+<div class="container">
+
 	<form method="POST" onsubmit="return data();">
 		<input type="text" name="name" id="user_name">
-		<input type="number" name="age" id="user_age">		
+		<input type="submit">				
 	</form>
+</div>
 </body>
 </html>
